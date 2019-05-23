@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,716" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,756" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -48,7 +48,7 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Object" Name="Value" />
+      <Variable x:TypeArguments="x:Object" Name="Value1" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -80,14 +80,14 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeVBA CodeFilePath="C:\Users\Shweta.kawad\Desktop\VBACode.txt" DisplayName="Invoke VBA" EntryMethodName="GetCheckBoxStatus" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeVBA_1" OutputValue="[Value]">
+              <ui:InvokeVBA CodeFilePath="C:\Users\Shweta.kawad\Desktop\VBACode.txt" DisplayName="Invoke VBA" EntryMethodName="GetCheckBoxStatus" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeVBA_1" OutputValue="[Value1]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeVBA>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Value.ToString]" TopMost="True" />
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Value1.ToString]" TopMost="True" />
             </Sequence>
           </ActivityAction>
         </ui:ExcelApplicationScope.Body>
@@ -105,7 +105,7 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeComMethod CLSID="{x:Null}" ContinueOnError="{x:Null}" ProgID="{x:Null}" BindingFlags="InvokeMethod" DisplayName="Invoke Com Method" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeComMethod_1" MethodName="[GetCheckBoxStatus]" Result="[Value]">
+      <ui:InvokeComMethod CLSID="{x:Null}" ContinueOnError="{x:Null}" ProgID="{x:Null}" BindingFlags="InvokeMethod" DisplayName="Invoke Com Method" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeComMethod_1" MethodName="[GetCheckBoxStatus]" Result="[Value1]">
         <ui:InvokeComMethod.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeComMethod.Arguments>
@@ -124,9 +124,9 @@
           <av:PointCollection x:Key="ConnectorLocation">290,405.5 290,444.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="    Dim xlApp As Microsoft.Office.Interop.Excel.Application = Nothing&#xD;&#xA;        Dim xlWorkBooks As Microsoft.Office.Interop.Excel.Workbooks = Nothing&#xD;&#xA;        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xD;&#xA;        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xD;&#xA;        Dim CheckBox1Value As Boolean&#xD;&#xA;        xlApp = New Microsoft.Office.Interop.Excel.Application&#xD;&#xA;        xlApp.DisplayAlerts = False&#xD;&#xA;        xlWorkBooks = xlApp.Workbooks&#xD;&#xA;        xlWorkBook = xlWorkBooks.Open(&quot;E:\RWS_UiPath\RWS\Process2\PROG A FORM - BOT - Includes Data for Development and Testing.xlsx&quot;)&#xD;&#xA;        Console.WriteLine(xlWorkBook.FullName)&#xD;&#xA;        xlWorkSheet = CType(xlWorkBook.Sheets(1), Microsoft.Office.Interop.Excel.Worksheet)&#xD;&#xA;        Dim cb As Microsoft.Office.Interop.Excel.CheckBox&#xD;&#xA;&#xD;&#xA;        cb = CType(xlWorkSheet.CheckBoxes(&quot;Check Box 2&quot;), Microsoft.Office.Interop.Excel.CheckBox)&#xD;&#xA;&#xD;&#xA;        value = cb.Value" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="314,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="    Dim xlApp As Microsoft.Office.Interop.Excel.Application = Nothing&#xA;        Dim xlWorkBooks As Microsoft.Office.Interop.Excel.Workbooks = Nothing&#xA;        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xA;        Dim CheckBox1Value As Boolean&#xA;        xlApp = New Microsoft.Office.Interop.Excel.Application&#xA;        xlApp.DisplayAlerts = False&#xA;        xlWorkBooks = xlApp.Workbooks&#xA;        xlWorkBook = xlWorkBooks.Open(&quot;E:\RWS_UiPath\RWS\Process2\PROG A FORM - BOT - Includes Data for Development and Testing.xlsx&quot;)&#xA;        Console.WriteLine(xlWorkBook.FullName)&#xA;        xlWorkSheet = CType(xlWorkBook.Sheets(1), Microsoft.Office.Interop.Excel.Worksheet)&#xA;        Dim cb As Microsoft.Office.Interop.Excel.CheckBox&#xA;&#xA;        cb = CType(xlWorkSheet.CheckBoxes(&quot;Check Box 2&quot;), Microsoft.Office.Interop.Excel.CheckBox)&#xA;&#xA;        value = cb.Value" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
         <ui:InvokeCode.Arguments>
-          <OutArgument x:TypeArguments="x:Object" x:Key="value">[Value]</OutArgument>
+          <OutArgument x:TypeArguments="x:Object" x:Key="value">[Value1]</OutArgument>
         </ui:InvokeCode.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -142,7 +142,7 @@
               <av:Size x:Key="ShapeSize">200,51</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[Value.ToString]" TopMost="True">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[Value1.ToString]" TopMost="True">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
